@@ -5,31 +5,31 @@ Example of Webserver Deployment to multiple regions in Azure
 ## 1. Login to Azure:
 
 ```
-$ az login
+az login
 ```
 
 ## 2. Clone repo:
 
 ```
-$ git clone git@github.com:cduch/terraform-azure-multiregion-example.git
+git clone git@github.com:cduch/terraform-azure-multiregion-example.git
 ```
 
 ## 3. Edit terraform.tfvars and change at least the _admin_password_ and the _owner_
 
 ```
-$ cd terraform-azure-multiregion-example
-$ vi terraform.tfvars
+cd terraform-azure-multiregion-example
+vi terraform.tfvars
 ```
 ## 4. Plan & Apply changes
 
 ```
-$ terraform plan
+terraform plan
 ```
 
 Check if everything looks like desired, if so apply the changes:
 
 ```
-$ terraform apply -auto-approve
+terraform apply -auto-approve
 ```
 
 ## 5. Use IPs in Output to access the webservers
@@ -46,5 +46,5 @@ ip_addresses = tolist([
 ## 6. Destroy the deployment
 
 ```
-$ terraform destroy -auto-approve
+terraform destroy -auto-approve
 ```
