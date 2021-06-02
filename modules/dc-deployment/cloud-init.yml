@@ -1,0 +1,21 @@
+#cloud-config
+
+
+# install packages
+packages:
+ - apache2
+ - php
+ - libapache2-mod-php
+
+write_files:
+ - content: |
+    DirectoryIndex index.php
+   path: /var/www/html/.htaccess
+ - content: |
+    <?php echo "<h1>You are visiting webserver: ".$_SERVER['SERVER_NAME']."</h1>";
+   path: /var/www/html/index.php
+
+runcmd:
+ - sudo systemctl start apache2
+ - sudo systemctl enable apache2
+

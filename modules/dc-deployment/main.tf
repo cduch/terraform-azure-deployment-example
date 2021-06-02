@@ -71,6 +71,7 @@ resource "azurerm_network_security_group" "nsg" {
     destination_address_prefix = "*"
   }
 
+/* NOT REQUIRED IF CLOUD-INIT IS USED */
   security_rule {
     name                       = "ssh"
     priority                   = 1001
@@ -82,6 +83,7 @@ resource "azurerm_network_security_group" "nsg" {
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
+/**/
 
 }
 
@@ -116,14 +118,16 @@ resource "azurerm_virtual_machine" "vm" {
     computer_name  = "${var.prefix}vm${var.suffix}"
     admin_username = var.admin_username
     admin_password = var.admin_password
-    custom_data    = file("${path.module}/vm-custom-data.sh")
+    custom_data    = data.template_file.custom_data.rendered
   }
 
   os_profile_linux_config {
     disable_password_authentication = false
   }
+
+
 /*
-Those ugly provisioners ... better use custom_data (cloud-init) instead, does the same without any SSH requirement
+Provisioner not required, better use custom_data (cloud-init) instead, does the same without any SSH requirement
 
   provisioner "file" {
     source      = "${path.module}/vm-custom-data.sh"
@@ -153,4 +157,9 @@ Those ugly provisioners ... better use custom_data (cloud-init) instead, does th
 
   }
 */
+}
+
+
+data "template_file" "custom_data" {
+  template = file("${path.module}/cloud-init.yml")
 }
