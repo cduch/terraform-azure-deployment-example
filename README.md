@@ -29,7 +29,7 @@ $ terraform plan
 Check if everything looks like desired, if so apply the changes:
 
 ```
-$ terraform apply
+$ terraform apply -auto-approve
 ```
 
 ## 5. Use IPs in Output to access the webservers
@@ -41,4 +41,10 @@ ip_addresses = tolist([
   "X.X.X.X",
 ])
 
+```
+
+## 6. Destroy the deployment
+
+```
+$ terraform destroy -auto-approve
 ```
