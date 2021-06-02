@@ -71,7 +71,7 @@ resource "azurerm_network_security_group" "nsg" {
     destination_address_prefix = "*"
   }
 
-/* NOT REQUIRED IF CLOUD-INIT IS USED */
+/* NOT REQUIRED IF CLOUD-INIT IS USED
   security_rule {
     name                       = "ssh"
     priority                   = 1001
@@ -83,7 +83,7 @@ resource "azurerm_network_security_group" "nsg" {
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
-/**/
+*/
 
 }
 
