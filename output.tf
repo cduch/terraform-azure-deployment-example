@@ -2,6 +2,8 @@
     Outputs
 */
 
-//output "ip_addresses" {
- //   value = split(",", join(",", module.vm-example-module.*.ip_address))
-//}
+output "ip_addresses" {
+    value = toset([
+        for key in module.vm-example-module : module.vm-example-module[key].ip_address
+    ])
+}

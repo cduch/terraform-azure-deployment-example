@@ -25,5 +25,4 @@ module "vm-example-module" {
   admin_password = var.admin_password
   owner          = var.owner
   location       = var.location
-
 }
