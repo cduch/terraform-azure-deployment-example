@@ -5,7 +5,7 @@ variable "prefix" {
 
 
 variable "environments" {
-  type = list(string)
+  type = set(string)
 }
 
 
