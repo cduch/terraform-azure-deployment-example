@@ -18,7 +18,8 @@ module "vm-example-module" {
   version = "0.0.1"
 
   for_each = var.environments
-
+  
+  name           = each.value
   prefix         = "${var.prefix}${each.value}-"
   suffix         = ""
   admin_username = var.admin_username
