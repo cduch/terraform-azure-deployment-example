@@ -1,7 +1,3 @@
-variable "sitecount" {
-  type = number
-}
-
 
 variable "prefix" {
   type = string
