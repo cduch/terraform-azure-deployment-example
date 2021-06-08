@@ -4,7 +4,7 @@ variable "prefix" {
 }
 
 variable "location" {
-  type = list(string)
+  type = string
 }
 
 variable "owner" {

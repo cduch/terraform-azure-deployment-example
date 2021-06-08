@@ -17,13 +17,13 @@ module "vm-example-module" {
   source  = "app.terraform.io/carstenduch/vm-example-module/azure"
   version = "0.0.1"
 
-  for_each = var.location
+  for_each = var.environments
 
-  prefix         = var.prefix
+  prefix         = "${var.prefix}${each.key}-"
   suffix         = "-${each.value}"
   admin_username = var.admin_username
   admin_password = var.admin_password
   owner          = var.owner
-  location       = each.value
+  location       = var.location
 
 }
