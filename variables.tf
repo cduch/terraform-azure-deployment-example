@@ -3,6 +3,12 @@ variable "prefix" {
   type = string
 }
 
+
+variable "environments" {
+  type = list(string)
+}
+
+
 variable "location" {
   type = string
 }
