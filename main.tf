@@ -15,7 +15,7 @@ provider "azurerm" {
 
 module "vm-example-module" {
   source  = "app.terraform.io/carstenduch/vm-example-module/azure"
-  version = "0.0.2"
+  version = "0.0.3"
 
   for_each = var.environments
   
