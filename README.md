@@ -1,6 +1,6 @@
-# terraform-azure-multiregion-example
+# terraform-azure-deployment-example
 
-Example of Webserver Deployment to multiple regions in Azure
+Example of Webserver Deployment in Azure
 
 ## 1. Login to Azure and set ENV variables:
 
