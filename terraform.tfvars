@@ -1,8 +1,8 @@
 location        = "westeurope"
 prefix          = "tmp-"
 
-admin_password  = "REallyCompl3XPassword!" // INSERT YOUR OWN SECURE PASSWORD HERE
+#admin_password  = ""
 
-owner           = "YOURNAME"
+#owner           = ""
 
-environments    = ["dev","qa","prod"]
+environments    = ["dev"] # ["dev","prod"]
