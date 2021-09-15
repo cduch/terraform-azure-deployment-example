@@ -59,5 +59,3 @@ ip_addresses = tolist([
 ```
 terraform destroy -auto-approve
 ```
-
-xxx
