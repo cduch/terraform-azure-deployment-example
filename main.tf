@@ -21,7 +21,7 @@ module "vm-example-module" {
   
   name           = each.value
   prefix         = "${var.prefix}${each.value}-"
-  suffix         = "dt"
+  suffix         = "FCI"
   admin_username = var.admin_username
   admin_password = var.admin_password
   owner          = var.owner
