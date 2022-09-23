@@ -5,4 +5,13 @@ prefix          = "tmp-"
 
 #owner           = ""
 
-environments    = [{site_name="dev1",cidr_block="cidr1"},{site_name="dev2",cidr_block="cidr2"}]
+environments    = [
+      {
+        "site_name": "site1",
+        "cidr_block": "cidrblock1"
+      },
+      {
+        "site_name": "site2",
+        "cidr_block": "cidrblock2"
+      }
+    ]  
