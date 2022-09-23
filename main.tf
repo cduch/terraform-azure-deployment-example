@@ -17,8 +17,11 @@ module "vm-example-module" {
   source  = "app.terraform.io/carstenduch/vm-example-module/azure"
   version = "0.0.6"
 
-  for_each = var.environments
-  
+#  for_each = var.environments
+  for_each = {for i, v in var.environments:  i => v}
+
+
+
   name           = each.value.site_name
   prefix         = "${var.prefix}${each.value}-"
   suffix         = ""
