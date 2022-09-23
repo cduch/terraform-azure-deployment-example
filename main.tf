@@ -21,7 +21,7 @@ module "vm-example-module" {
 
 
   name           = each.value.site_name
-  prefix         = "${var.prefix}${each.value}-"
+  prefix         = "${var.prefix}${each.value.site_name}-"
   suffix         = ""
   admin_username = var.admin_username
   admin_password = var.admin_password
