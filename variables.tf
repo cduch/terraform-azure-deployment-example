@@ -5,7 +5,18 @@ variable "prefix" {
 
 
 variable "environments" {
-  type = set(string)
+  type = set(object(
+
+    {
+
+      site_name = string
+
+      cidr_block = string
+
+    }
+
+  ))
+
 }
 
 

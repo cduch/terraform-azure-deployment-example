@@ -19,7 +19,7 @@ module "vm-example-module" {
 
   for_each = var.environments
   
-  name           = each.value
+  name           = each.value.site_name
   prefix         = "${var.prefix}${each.value}-"
   suffix         = ""
   admin_username = var.admin_username
